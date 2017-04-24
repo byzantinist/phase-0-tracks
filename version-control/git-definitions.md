@@ -17,3 +17,5 @@ A commit is the creation of a save point. You first determine which files you wa
 * What is a merge conflict?
 
 A merge conflict is an issue that can occur when merging and that needs to be solved before proceeding. The most common situation is when both branches have modified the same file. In that case, you will need to specify which version to use. (It's kind of like when you copy over a directory but there is a file with the same name as an existing file. You then need to decide which version to use.)
+
+(This is a minor change so that I can make a pull request and mention my awesome teacher (Andrew Larson)!)
