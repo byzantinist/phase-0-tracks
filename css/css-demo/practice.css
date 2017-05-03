@@ -1,0 +1,9 @@
+.job {
+  font-size: .8em;
+
+  border-radius: 25px;
+  background: #e9e5dc;
+  padding: 20px; 
+  width: 200px;
+  height: 200px; 
+}
