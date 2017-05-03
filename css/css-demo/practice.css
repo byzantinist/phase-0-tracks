@@ -30,7 +30,7 @@ ul:hover{
 	 color: blue;
 }
 
-/* This is an exapmle of a child combinator selector.
+/* This is an example of a child combinator selector.
 ul > li {
 	text-transform: lowercase;
 }*/
