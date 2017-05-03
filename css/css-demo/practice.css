@@ -1,0 +1,42 @@
+#contact-info{
+	 font-size: .8em;
+}
+
+.job {
+  border-radius: 25px;
+  background: #e9e5dc;
+  padding: 20px; 
+  width: 200px;
+  height: 300px; 
+}
+
+/* An alternative way of changing the text of accomplishments, without needing to create a class.
+Release 2 (#1): This can also be used to determine conflicting rules.*/
+ul {
+	  font-size: 1em;
+}
+
+.accomplishments {
+	  font-size: .8em;
+}
+
+
+/* Release 2 (#2): Experimenting with pseudoselectors by changing the color of text. Also combined it with conflicting rules.*/
+ul:hover{
+	color: red;
+}
+
+.accomplishments:hover {
+	 color: blue;
+}
+
+/* This is an exapmle of a child combinator selector.
+ul > li {
+	text-transform: lowercase;
+}*/
+
+/* Release 2 (#3): Using a descendent selector. */
+ul li{
+	text-transform: uppercase;
+}
+
