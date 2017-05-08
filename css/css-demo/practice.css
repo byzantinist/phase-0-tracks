@@ -7,7 +7,9 @@
   background: #e9e5dc;
   padding: 20px; 
   width: 200px;
-  height: 300px; 
+  height: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* An alternative way of changing the text of accomplishments, without needing to create a class.
@@ -39,4 +41,3 @@ ul > li {
 ul li{
 	text-transform: uppercase;
 }
-
