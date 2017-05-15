@@ -1,0 +1,45 @@
+4.2 Algorithms
+Release 0: Equip Your New Robot (To Use an Elevator)
+
+1. Display Welcome message
+2. Ask what floor it needs to go to
+	Obtains input
+3. Determine if it is already on the correct floor
+	If true, inform user
+4. Locate elevator
+5. Determine whether it eneds to go up or down
+6. Summon elevator by pushing up/down button
+7. Enter elevator
+8. Locate button with desired floor
+9. Push button with desired floor
+10. Exit elevator
+
+-----------------------
+
+4.2 Algorithms
+Release 0: Find a Real-Life Algorithm
+How to Walk Your Cat
+
+1. Locate cat
+	Check common hiding places
+	Call out cat by name
+	Look for trail or mess, listen for meows
+
+2. Put harness on cat
+	Distract cat with toys
+	Reward cat with treats
+
+3. Go outside
+
+4. Go on walk
+	Loop: Count up to time limit, or count down to
+	distance, or while cat is entertained and
+	manageable
+
+5. Explore surroundings
+	Keep cat out of trouble
+
+6. Return home
+	Hopefully you won't need to drag the cat around!
+
+7. Remove harness
