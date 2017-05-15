@@ -48,24 +48,42 @@ while (count < employee_count)
 		end
 	end
 
-	result = "Results inconclusive."
+		allergy_check = true
+		more_allergies = true
 
-	if ((age_check == true) && ((garlic_check == true) || (insurance_check == true)))
-		result = "Probably not a vampire."
-	end
+		while (more_allergies == true)
+			puts "Please enter your allergies, one at a time. Type 'done' when you are finished or if you have none."
+			allergy = gets.chomp
+			if ((allergy == "sunshine") || (allergy == "Sunshine"))
+				allergy_check = false
+			elsif ((allergy == "done")) || (allergy == "Done")
+				more_allergies = false
+			end
+		end
 
-	if ((age_check == false) && ((garlic_check == false) || (insurance_check == false)))
+	if (allergy_check == false)
 		result = "Probably a vampire."
-	end
+	else
+		result = "Results inconclusive."
 
-	if ((age_check == false) && ((garlic_check == false) && (insurance_check == false)))
-		result = "Almost certainly a vampire."
-	end
+		if ((age_check == true) && ((garlic_check == true) || (insurance_check == true)))
+			result = "Probably not a vampire."
+		end
 
-	if ((name == "Drake Cula") || (name == "Tu Fang"))
-		result = "Definitely a vampire."
+		if ((age_check == false) && ((garlic_check == false) || (insurance_check == false)))
+			result = "Probably a vampire."
+		end
+
+		if ((age_check == false) && ((garlic_check == false) && (insurance_check == false)))
+			result = "Almost certainly a vampire."
+		end
+
+		if ((name == "Drake Cula") || (name == "Tu Fang"))
+			result = "Definitely a vampire."
+		end
 	end
 
 	puts "Based on our proprietary vampire detection algorithm, our determination for #{name} is: #{result}"
 	count += 1
 end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
