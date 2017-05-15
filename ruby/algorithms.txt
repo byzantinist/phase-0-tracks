@@ -7,7 +7,7 @@ Release 0: Equip Your New Robot (To Use an Elevator)
 3. Determine if it is already on the correct floor
 	If true, inform user
 4. Locate elevator
-5. Determine whether it eneds to go up or down
+5. Determine whether it needs to go up or down
 6. Summon elevator by pushing up/down button
 7. Enter elevator
 8. Locate button with desired floor
@@ -32,9 +32,7 @@ How to Walk Your Cat
 3. Go outside
 
 4. Go on walk
-	Loop: Count up to time limit, or count down to
-	distance, or while cat is entertained and
-	manageable
+	Loop: Count up to time limit, or count down to distance, or while cat is entertained and manageable
 
 5. Explore surroundings
 	Keep cat out of trouble
