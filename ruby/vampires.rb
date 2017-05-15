@@ -1,13 +1,16 @@
 
+# Welcome screen. Initializes count for the while loop which is used to determine how many employees to process.
 puts "Welcome to the Werewolf Intelligence Bureau!"
 puts "How many employees would you like to process?"
 employee_count = gets.chomp.to_i
 count = 0
 
+# This runs for each individual employee.
 while (count < employee_count)
 	puts "Hello! What is your name?"
 	name = gets.chomp
 
+	# Compares the age given to the birth year.
 	puts "How old are you?"
 	age = gets.chomp.to_i
 	puts "What year were you born? (Please use A.D.)"
@@ -18,6 +21,7 @@ while (count < employee_count)
 		age_check = false
 	end
 
+	# This while loop ensures that a valid "Yes" or "No" response is given.
 	valid = 0
 	while (valid == 0)
 		puts "Our company cafeteria serves some delicious garlic bread. Should we order some for you? Please enter 'yes' or 'no'."
@@ -33,6 +37,7 @@ while (count < employee_count)
 		end
 	end
 
+	# This while loop ensures that a valid "Yes" or "No" response is given.
 	valid = 0
 	while (valid == 0)
 		puts "Would you like to enroll in the company's health insurance? Please enter 'yes' or 'no'."
@@ -48,20 +53,22 @@ while (count < employee_count)
 		end
 	end
 
-		allergy_check = true
-		more_allergies = true
-
-		while (more_allergies == true)
-			puts "Please enter your allergies, one at a time. Type 'done' when you are finished or if you have none."
-			allergy = gets.chomp
-			if ((allergy == "sunshine") || (allergy == "Sunshine"))
-				allergy_check = false
-			elsif ((allergy == "done")) || (allergy == "Done")
-				more_allergies = false
-			end
+	# This while loop is used to collect allergy information. We are mainly looking for "sunshine" as an answer.
+	allergy_check = true
+	more_allergies = true
+	while (more_allergies == true)
+		puts "Please enter your allergies, one at a time. Type 'done' when you are finished or if you have none."
+		allergy = gets.chomp
+		if ((allergy == "sunshine") || (allergy == "Sunshine"))
+			allergy_check = false
+			more_allergies = false
+		elsif ((allergy == "done")) || (allergy == "Done")
+			more_allergies = false
 		end
+	end
 
-	if (allergy_check == false)
+	# Based on the given conditions, we determine the result - is the employee likely to be a vampire?
+	if (allergy_check != true)
 		result = "Probably a vampire."
 	else
 		result = "Results inconclusive."
