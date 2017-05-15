@@ -1,3 +1,31 @@
-html * {
-	color: blue;
+header{
+  text-transform: uppercase;
+  position: fixed;
 }
+
+.column-1 {
+  display: inline-block;
+  vertical-align: top;  
+  width: 400px;
+  color: red;
+  font-family: Helvetica;
+  height: 5000px;
+}
+
+.column-2 {
+  background-image: url('http://xaharts.org/funny/i/gitopuss/github-octocat_yes-we-code.jpg');
+  background-position: right top;
+  background-repeat: no-repeat;
+  
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+  color: green;
+  font-style: italic;
+  
+  height: 5000px;
+}
+
+footer {
+  border: 3px dashed green;
+  }
