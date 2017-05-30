@@ -1,3 +1,7 @@
+# GPS 2-2
+# GPS Partner: EJ Vickery
+# GPS Guide: Jeff Fichtner
+
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
@@ -103,3 +107,31 @@ def print_list(list_hash)
         puts "The quantity of #{key} is: #{value}"
     end
 end
+
+# Release 4: Reflect
+
+# 1. I learned how pseudocode can be helpful in separating out each of
+# the methods you plan to write and how you can break down each method into
+# component steps.
+
+# 2. With hashes, you can store both keys and values. If you went with arrays
+# you would need two separate arrays. This is relevant because with the list
+# you also needed to store the quantity along with the item. The downside to hashes 
+# is that they are a little more complicated to use and understand but they have 
+# far more potential.
+
+# 3. A method returns whatever you want it to! Normally it returns the last thing
+# before the "end" line. That is why you should be careful if the last line is
+# simply a "puts" statement.
+
+# 4. You can pass any sort of object into a method as an argument. However,
+# you are not able to pass a method as an argument since it is not an object.
+
+# 5. You can create special data structures that pass the information along from
+# one method to another. Or you can have one method call another method. Or you
+# can have one method return something that is used in another method. Or you
+# may be able to use certain class attributes to store information from different
+# methods.
+
+# 6. This GPS really improved my familiarity and mastery of hashes. I feel much
+# more confident about using them now. (Also thanks to a great partner!)
