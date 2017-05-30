@@ -60,11 +60,16 @@ class Game
 			@history << character
 			@guesses += -1
 			count = 0
-			while count < @length
-				if @secret_array[count] == character
-					@display[count] = character
+			if secret_array.include?(character)
+				puts "Good work! There are #{secret_array.count(character)} instance(s) of '#{character}'!"
+				while count < @length
+					if @secret_array[count] == character
+						@display[count] = character
+					end
+					count += 1
 				end
-				count += 1
+			else
+				puts "Sorry, there is no '#{character}' in the secret word or phrase!"			
 			end
 		else
 			# Repeated guesses do not count: @guesses does not decrement in this case
