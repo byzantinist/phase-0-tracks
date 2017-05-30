@@ -26,4 +26,15 @@ describe Game do
   	expect(game.display.join(' ')). to eq "_ _ _ _ _ _ _"
   end
 	
+  it "player guesses 'o'" do
+  	game.guessing
+  	expect(game.history). to eq ["o"]
+  	expect(game.guesses). to eq 13
+  	expect(game.display.join(' ')). to eq "_ _ _ _ o _ _"
+  end
+
+  # Overall, I found RSpec to be rather cumbersome to use with programs that
+  # require user-input. I was able to hardcode some results and comment/uncomment
+  # it out. Is there a better solution?
+
 end

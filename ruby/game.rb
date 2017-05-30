@@ -12,7 +12,7 @@ class Game
 		# For Ruby, we use gets.chomp
 		# For RSpec purposes, we assume the user will input "unicorn"
 		@secret = gets.chomp.downcase
-		@secret = "unicorn"
+		#@secret = "unicorn"
 		puts "\e[H\e[2J"
 		puts "Player 1 has entered the secret word!"
 
@@ -32,27 +32,48 @@ class Game
 
 	# Player 2: Attempts to guess the word
 	def guessing
+		# Feedback on the current state of the word
 		puts "Here is your secret word: #{@display.join(' ')}"
 		puts "Here are your previous guesses: #{@history.join(' ')}"
 		puts "You have #{guesses} guesses left! Please save the unicorn!"
 		puts "Player 2, please guess a letter:"
 
+		letter = gets.chomp.downcase
+		#Test code for Rspec
+		#letter = 'o'
 
+		if !@history.include?(letter)
+			@history << letter
+			@guesses += -1
+			count = 0
+			while count < @length
+				if @secret_array[count] == letter
+					@display[count] = letter
+				end
+				count += 1
+			end
+		else
+			# Repeated guesses do not count: @guesses does not decrement in this case
+			puts "You have already guessed the letter '#{letter}'!"
+		end
+
+		# Congratulatory Message or taunting Message
+		if @display == @secret_array
+			puts "Congratulations! You have successfully saved the unicorn by guessing the secret word. You still had #{guesses} guesses left!"
+			@guesses = "victory"
+		elsif @guesses == 0
+			puts "Oh noes! You have failed to guess the secret word. The unicorn is dead and it is all YOUR FAULT!  :'("
+		end
+
+		if @guesses == "victory"
+			@guesses = 0
+		end
 	end
 
 end
 
 # Driver code
 lets_play = Game.new
-lets_play.state
-
-
-
-
-
-# Repeated guesses do not count
-# Array used to store past guesses
-
-# Feedback on the current state of the word
-
-# Congratulatory Message or taunting Message
+while lets_play.guesses > 0
+	lets_play.guessing
+end
