@@ -1,3 +1,36 @@
+class TodoList
+  def initialize(input)
+    @input = input
+    @list = input
+  end
+
+  def get_items
+    @list
+  end
+
+  def add_item(task)
+    @list.push(task)
+    @list
+  end
+
+  def delete_item(task)
+    @list.delete(task)
+    @list
+  end
+
+  def get_item(index)
+    @list[index]
+  end
+end
+
+# This is for Ruby testing
+#try = TodoList.new(["do the dishes", "mow the lawn"])
+#puts try.get_items
+#puts try.add_item("mop")
+#puts try.delete_item("do the dishes")
+#puts try.get_item(0)
+
+# This is for Rspec testing
 describe TodoList do
   let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
 
