@@ -12,12 +12,12 @@ function longest(array) {
 		}
 	}
 	// 3. Output array
-		console.log(current_longest);
+	// console.log(current_longest);
 	return current_longest;
 }
 
 // Driver code
-longest(["long phrase","longest phrase","longer phrase"])
+console.log(longest(["long phrase","longest phrase","longer phrase"]));
 
 // Release 1: Find a Key-Value Match
 
@@ -55,3 +55,31 @@ key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 key_value_match({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3});
 key_value_match({animal: "Dog", legs: 4}, {animal: "Cat", legs: 3});
 key_value_match({animal: "Dog", legs: 4}, {animal: "Cat", legs: 4});
+
+// Release 2: Generate Random Test Data
+
+// 1. Takes in an integer as input
+function random(number) {
+	// 2. Creates an array
+	array = [];
+	characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+	// 3. For loop based on integer count
+	for (var i  = 0; i < number; i++) {
+		// 4. Generates a random word
+		new_word = "";
+		random_length = 1 + Math.floor(Math.random()*10);
+		for (var j = 0; j < random_length; j++) {
+			new_word += characters[(Math.floor(Math.random()*52))];
+		}
+		array.push(new_word);
+	}
+	// 5. Outputs array
+	return array;
+}
+
+
+// Driver code
+for (var z = 0; z < 10; z++) {
+	console.log(longest(random(10)));	
+}
