@@ -1,17 +1,87 @@
+# Maintain Contact Information in a Database
 
+# require gems
+require 'sqlite3'
+
+# create SQLite3 database
+db = SQLite3::Database.new("contacts.db")
+
+# create contacts table if it is not there already
+create_table_cmd = <<-SQL
+	CREATE TABLE IF NOT EXISTS contacts(
+		id INTEGER PRIMARY KEY,
+		first_name VARCHAR(255),
+		last_name VARCHAR(255),
+		phone INT
+	)
+SQL
+db.execute(create_table_cmd)
+
+# Main screen that runs sub-methods
+def main_screen(db)
+	continue = true
+	while (continue)
+		option = option_screen
+		if option == "q"
+			continue = false
+		elsif option == "a"
+			add(db)
+		elsif option == 'd'
+			delete(db)
+		elsif option == "v"
+			view(db)
+		else
+			puts option
+		end
+	end
+end
+
+# Welcome screen that figures out what the user wants to do
 def option_screen
 	valid = false
 	while (!valid)
 		puts "Welcome to the Contact Information Database!"
-		puts "Would you like to (A)dd an entry, (D)elete an entry, or (V)iew the database?"
+		puts "Would you like to (A)dd an entry, (D)elete an entry, (V)iew the database, or (Q)uit?"
 		option = gets.chomp.downcase
-		if (option == "a") || (option == "d") || (option == "v")
+		if (option == "a") || (option == "d") || (option == "v") || (option == "q")
 			valid = true
 		else
 			puts "You have entered an invalid option. Please try again."
 		end
 	end	
-	puts option
+	option
 end
 
-option_screen
+# Add entry
+def add(db)
+	puts "Adding a new contact to the database...."
+	puts "What is the contact's first name?"
+	first_name = gets.chomp
+	puts "What is the #{first_name}'s last name?"
+	last_name = gets.chomp
+	puts "What is #{first_name} #{last_name}'s phone number?"
+	phone = gets.chomp
+	db.execute("INSERT INTO contacts (first_name, last_name, phone) VALUES ('#{first_name}', '#{last_name}', #{phone})")
+	puts "#{first_name} #{last_name} has been entered into the contact database with contact number #{phone}!"	
+end
+
+def delete(db)
+	puts "Which entry number would you like to delete?"
+	deletion = gets.chomp.to_i
+	entries = db.execute("SELECT * FROM contacts WHERE id=#{deletion}")
+	entries.each do |entry|
+		puts "Deleting #{entry[1]} #{entry[2]}'s phone number of #{entry[3]}!"
+	end
+	db.execute("DELETE FROM CONTACTS where id = '#{deletion}'")
+end
+
+def view(db)
+	entries = db.execute("SELECT * FROM contacts")
+	entries.each do |entry|
+		puts "#{entry[0]}. #{entry[1]} #{entry[2]}'s phone number is #{entry[3]}."
+	end
+end
+
+
+
+main_screen(db)
